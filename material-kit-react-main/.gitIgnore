@@ -1,0 +1,30 @@
+# Archivos de compilación
+*.o
+*.out
+*.exe
+
+# Archivos temporales
+*~
+
+# Directorios generados
+__pycache__/
+node_modules/
+
+# Archivos de configuración
+*.log
+*.ini
+*.config
+
+# Dependencias y carpetas específicas de lenguajes
+venv/
+env/
+/.vscode/
+.idea/
+
+# Archivos de construcción
+build/
+dist/
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
