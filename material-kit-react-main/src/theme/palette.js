@@ -118,6 +118,7 @@ export function palette() {
     text: {
       primary: common.white,
       secondary: customColors.spicyMix,
+      tertiary: customColors.twine,
       disabled: customColors.riverBed,
     },
     background: {

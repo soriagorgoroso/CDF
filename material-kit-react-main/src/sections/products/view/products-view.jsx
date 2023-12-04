@@ -10,11 +10,157 @@ import ProductSort from '../product-sort';
 import ProductFilters from '../product-filters';
 import ProductCartWidget from '../product-cart-widget';
 
-
+const mockBuildings = [
+  {
+    alt_description: 'Low angle grayscale photography of skyscraper',
+    urls: {
+      full: 'https://images.unsplash.com/photo-7RNFvcJ3fak',
+    },
+    links: {
+      html: 'https://unsplash.com/photos/7RNFvcJ3fak',
+    },
+    description: 'Skyscraper View',
+    user: {
+      instagram_username: 'sample_instagram',
+    },
+  },
+  {
+    alt_description: 'Low angle grayscale photography of skyscraper',
+    urls: {
+      full: 'https://images.unsplash.com/photo-7RNFvcJ3fak',
+    },
+    links: {
+      html: 'https://unsplash.com/photos/7RNFvcJ3fak',
+    },
+    description: 'Skyscraper View',
+    user: {
+      instagram_username: 'sample_instagram',
+    },
+  },
+  {
+    alt_description: 'Low angle grayscale photography of skyscraper',
+    urls: {
+      full: 'https://images.unsplash.com/photo-7RNFvcJ3fak',
+    },
+    links: {
+      html: 'https://unsplash.com/photos/7RNFvcJ3fak',
+    },
+    description: 'Skyscraper View',
+    user: {
+      instagram_username: 'sample_instagram',
+    },
+  },
+  {
+    alt_description: 'Low angle grayscale photography of skyscraper',
+    urls: {
+      full: 'https://images.unsplash.com/photo-7RNFvcJ3fak',
+    },
+    links: {
+      html: 'https://unsplash.com/photos/7RNFvcJ3fak',
+    },
+    description: 'Skyscraper View',
+    user: {
+      instagram_username: 'sample_instagram',
+    },
+  },
+  {
+    alt_description: 'City at night',
+    urls: {
+      full: 'https://images.unsplash.com/photo-night-city',
+    },
+    links: {
+      html: 'https://unsplash.com/photos/night-city',
+    },
+    description: 'City Lights',
+    user: {
+      instagram_username: 'night_crawler',
+    },
+  },
+  {
+    alt_description: 'City at night',
+    urls: {
+      full: 'https://images.unsplash.com/photo-night-city',
+    },
+    links: {
+      html: 'https://unsplash.com/photos/night-city',
+    },
+    description: 'City Lights',
+    user: {
+      instagram_username: 'night_crawler',
+    },
+  },
+  {
+    alt_description: 'City at night',
+    urls: {
+      full: 'https://images.unsplash.com/photo-night-city',
+    },
+    links: {
+      html: 'https://unsplash.com/photos/night-city',
+    },
+    description: 'City Lights',
+    user: {
+      instagram_username: 'night_crawler',
+    },
+  },
+  {
+    alt_description: 'City at night',
+    urls: {
+      full: 'https://images.unsplash.com/photo-night-city',
+    },
+    links: {
+      html: 'https://unsplash.com/photos/night-city',
+    },
+    description: 'City Lights',
+    user: {
+      instagram_username: 'night_crawler',
+    },
+  },
+  {
+    alt_description: 'City at night',
+    urls: {
+      full: 'https://images.unsplash.com/photo-night-city',
+    },
+    links: {
+      html: 'https://unsplash.com/photos/night-city',
+    },
+    description: 'City Lights',
+    user: {
+      instagram_username: 'night_crawler',
+    },
+  },
+  {
+    alt_description: 'City at night',
+    urls: {
+      full: 'https://images.unsplash.com/photo-night-city',
+    },
+    links: {
+      html: 'https://unsplash.com/photos/night-city',
+    },
+    description: 'City Lights',
+    user: {
+      instagram_username: 'night_crawler',
+    },
+  },
+  {
+    alt_description: 'City at night',
+    urls: {
+      full: 'https://images.unsplash.com/photo-night-city',
+    },
+    links: {
+      html: 'https://unsplash.com/photos/night-city',
+    },
+    description: 'City Lights',
+    user: {
+      instagram_username: 'night_crawler',
+    },
+  },
+  // ... (Agrega más objetos según sea necesario)
+];
 export default function ProductsView() {
   const [openFilter, setOpenFilter] = useState(false);
-  const [buildingImages, setBuildingImages] = useState([]);
+  const [buildingImages, setBuildingImages] = useState(mockBuildings);
 
+  console.log(buildingImages)
   const handleOpenFilter = () => {
     setOpenFilter(true);
   };
@@ -66,9 +212,9 @@ export default function ProductsView() {
       </Stack>
 
       <Grid container spacing={3}>
-        {buildingImages.map((img) => (
-          <Grid key={img.id} xs={12} sm={6} md={3}>
-            <ProductCard image={img} />
+        {buildingImages.map((bulding) => (
+          <Grid key={bulding.id} xs={12} sm={6} md={3}>
+            <ProductCard bulding={bulding} />
           </Grid>
         ))}
       </Grid>

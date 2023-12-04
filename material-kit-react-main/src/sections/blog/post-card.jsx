@@ -75,7 +75,7 @@ export default function PostCard({ post, index }) {
       justifyContent="flex-end"
       sx={{
         mt: 3,
-        color: 'text.disabled',
+        color: "text.tertiary"
       }}
     >
       {[
@@ -89,7 +89,7 @@ export default function PostCard({ post, index }) {
           sx={{
             ...((latestPostLarge || latestPost) && {
               opacity: 0.48,
-              color: 'common.white',
+              color: 'text.tertiary',
             }),
           }}
         >
@@ -121,10 +121,10 @@ export default function PostCard({ post, index }) {
       component="div"
       sx={{
         mb: 2,
-        color: 'text.disabled',
+        color: 'text.tertiary',
         ...((latestPostLarge || latestPost) && {
           opacity: 0.48,
-          color: 'common.white',
+          color: 'text.tertiary',
         }),
       }}
     >
