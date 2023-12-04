@@ -3,32 +3,36 @@ import { faker } from '@faker-js/faker';
 
 // ----------------------------------------------------------------------
 
-const PRODUCT_NAME = [
-  'Nike Air Force 1 NDESTRUKT',
-  'Nike Space Hippie 04',
-  'Nike Air Zoom Pegasus 37 A.I.R. Chaz Bear',
-  'Nike Blazer Low 77 Vintage',
-  'Nike ZoomX SuperRep Surge',
-  'Zoom Freak 2',
-  'Nike Air Max Zephyr',
-  'Jordan Delta',
-  'Air Jordan XXXV PF',
-  'Nike Waffle Racer Crater',
-  'Kyrie 7 EP Sisterhood',
-  'Nike Air Zoom BB NXT',
-  'Nike Air Force 1 07 LX',
-  'Nike Air Force 1 Shadow SE',
-  'Nike Air Zoom Tempo NEXT%',
-  'Nike DBreak-Type',
-  'Nike Air Max Up',
-  'Nike Air Max 270 React ENG',
-  'NikeCourt Royale',
-  'Nike Air Zoom Pegasus 37 Premium',
-  'Nike Air Zoom SuperRep',
-  'NikeCourt Royale',
-  'Nike React Art3mis',
-  'Nike React Infinity Run Flyknit A.I.R. Chaz Bear',
+
+const PROPERTY_NAMES = [
+  'Casa del Sol',
+  'Villa Serenidad',
+  'Rincón del Bosque',
+  'Quinta Esperanza',
+  'Torre Ébano',
+  'Jardines del Valle',
+  'Finca Encantada',
+  'Hacienda del Río',
+  'Chateau Montaña',
+  'Mirador del Lago',
+  'Casa de Campo',
+  'Palacio de las Flores',
+  'Mansión del Cielo',
+  'Estancia Aurora',
+  'Rancho del Sueño',
+  'Cabañas del Bosque',
+  'Edificio Épico',
+  'Residencia Esmeralda',
+  'Rancho del Sol',
+  'Torre del Horizonte',
+  'Chacra del Amanecer',
+  'Casa Blanca',
+  'Viviendas del Valle',
+  'Castillo del Ocaso',
 ];
+
+// Puedes usar la nueva constante PROPERTY_NAMES en lugar de PROPERTY_NAMES en tu código.
+
 const PRODUCT_COLOR = [
   '#00AB55',
   '#000000',
@@ -48,7 +52,7 @@ export const products = [...Array(24)].map((_, index) => {
   return {
     id: faker.string.uuid(),
     cover: `/assets/images/products/product_${setIndex}.jpg`,
-    name: PRODUCT_NAME[index],
+    name: PROPERTY_NAMES[index],
     price: faker.number.int({ min: 4, max: 99, precision: 0.01 }),
     priceSale: setIndex % 3 ? null : faker.number.int({ min: 19, max: 29, precision: 0.01 }),
     colors:

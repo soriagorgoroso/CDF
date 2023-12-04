@@ -99,25 +99,37 @@ const base = {
   action,
 };
 
+export const customColors = {
+  shark: '#212428',
+  twine: '#c29f5a',
+  spicyMix: '#806140',
+  judgeGray: '#534737',
+  mako: '#434c51',
+  riverBed: '#4e5a66',
+  corduroy: '#5b6464',
+  dustyGray: '#949494',
+  mantle: '#949c94',
+};
+
 // ----------------------------------------------------------------------
 
 export function palette() {
   return {
-    ...base,
-    mode: 'light',
     text: {
-      primary: grey[800],
-      secondary: grey[600],
-      disabled: grey[500],
+      primary: common.white,
+      secondary: customColors.spicyMix,
+      disabled: customColors.riverBed,
     },
     background: {
-      paper: '#FFFFFF',
-      default: grey[100],
-      neutral: grey[200],
+      paper: customColors.mako,
+      default: customColors.shark,
+      neutral: customColors.shark,
     },
     action: {
       ...base.action,
       active: grey[600],
     },
   };
+
 }
+

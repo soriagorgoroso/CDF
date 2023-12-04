@@ -1,21 +1,19 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
 import Typography from '@mui/material/Typography';
 
-import { products } from 'src/_mock/products';
-
 import ProductCard from '../product-card';
 import ProductSort from '../product-sort';
 import ProductFilters from '../product-filters';
 import ProductCartWidget from '../product-cart-widget';
 
-// ----------------------------------------------------------------------
 
 export default function ProductsView() {
   const [openFilter, setOpenFilter] = useState(false);
+  const [buildingImages, setBuildingImages] = useState([]);
 
   const handleOpenFilter = () => {
     setOpenFilter(true);
@@ -24,6 +22,24 @@ export default function ProductsView() {
   const handleCloseFilter = () => {
     setOpenFilter(false);
   };
+  // ----------------------------------------------------------------------
+
+  useEffect(() => {
+    const accessKey = "np84PTFYlvVLg1AMXu38z_8qiMPBkV0XaNNr-94QoHI";
+    const searchQuery = 'edificios';
+    const orientation = 'landscape';
+    const apiUrl = `https://api.unsplash.com/photos/random?query=${searchQuery}&orientation=${orientation}&client_id=${accessKey}&count=27`;
+
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data)
+        setBuildingImages(data);
+      })
+      .catch(error => {
+        console.error('Error al obtener fotos:', error);
+      });
+  }, []); // Empty dependency array ensures that the effect runs once after the initial render
 
   return (
     <Container>
@@ -50,9 +66,9 @@ export default function ProductsView() {
       </Stack>
 
       <Grid container spacing={3}>
-        {products.map((product) => (
-          <Grid key={product.id} xs={12} sm={6} md={3}>
-            <ProductCard product={product} />
+        {buildingImages.map((img) => (
+          <Grid key={img.id} xs={12} sm={6} md={3}>
+            <ProductCard image={img} />
           </Grid>
         ))}
       </Grid>
